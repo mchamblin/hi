@@ -25,12 +25,13 @@ The résumé page at `/resume/` is generated from `site.config.ts` and has a **S
 
 1. Push this project to `main` on [github.com/mchamblin/hi](https://github.com/mchamblin/hi).
 2. In the repo, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-3. The site goes live at `https://mchamblin.github.io/hi/`.
+3. The site is served at `https://atlyeah.com` (and at `https://mchamblin.github.io/hi/` until the custom domain is set).
 
-The workflow reads the final URL from GitHub, so renaming the repo (to `mchamblin.github.io` for a root URL, say) or adding a custom domain works without code changes.
+The workflow reads the final URL from GitHub, so changing the domain or renaming the repo works without code changes.
 
-### Custom domain
+### Custom domain (atlyeah.com, DNS at GoDaddy)
 
-1. In **Settings → Pages → Custom domain**, enter the domain and save.
-2. At your DNS provider, add a `CNAME` record for `www` pointing to `mchamblin.github.io`, and for the apex domain add `A` records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
-3. Once the certificate is issued, tick **Enforce HTTPS**.
+1. In GoDaddy's DNS page for the domain, add four `A` records with name `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `CNAME` record with name `www` pointing to `mchamblin.github.io`. Remove any parked-page `A` record and turn off domain forwarding.
+2. In the repo's **Settings → Pages → Custom domain**, enter `atlyeah.com` and save. Leave the source as **GitHub Actions**; no `CNAME` file is needed in the repo.
+3. Re-run the deploy workflow (or push) so the site is rebuilt for the new URL.
+4. Once the certificate is issued, tick **Enforce HTTPS**.

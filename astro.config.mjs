@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // The deploy workflow sets these from GitHub Pages itself, so the same build
 // works at https://<user>.github.io, at https://<user>.github.io/<repo>,
 // or on a custom domain without touching this file.
-const site = process.env.SITE_URL || 'https://mchamblin.github.io';
+const site = process.env.SITE_URL || 'https://atlyeah.com';
 const base = process.env.BASE_PATH || '/';
 
 export default defineConfig({
