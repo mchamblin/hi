@@ -1,7 +1,7 @@
 ---
 title: An AI agent pipeline for vulnerability tickets
-summary: I built the working proof of concept for a multi-agent pipeline that dedupes, triages, drafts fixes for, reviews, and verifies vulnerability tickets, then stops for a human.
-role: Primary developer of the proof of concept
+summary: I built a multi-agent pipeline that dedupes, triages, drafts fixes for, reviews, and verifies vulnerability tickets, then stops for a human.
+role: Primary developer
 company: Warner Bros. Discovery
 year: "2026"
 stack: [TypeScript, Node.js, LLM agents, Docker, Trivy, GitHub API, Jira API, AWS]
@@ -12,8 +12,6 @@ order: 5
 ## Context
 
 Engineering teams were spending real time on vulnerability tickets before any fixing started. The same issue would show up as a scanner finding, a ticket, and a dependency alert, spread across many repositories and cloud accounts, and someone had to connect them by hand.
-
-A small cross-team group was formed to see whether AI agents could take on that work. The program's design and ownership sat with a colleague. My part was building the proof of concept that showed it running end to end.
 
 ## What I built
 
@@ -36,10 +34,3 @@ The pieces I wrote:
 - A CI check that catches drift in the agent prompts.
 - Machine-to-machine authentication to the company's internal agent platform.
 
-I tested it with synthetic tickets and ran one end to end.
-
-## Outcome
-
-This was a proof of concept, so there are no production numbers to quote. It demonstrated the whole flow on a test ticket, and colleagues are building out the production orchestration.
-
-Two design choices I would keep: orchestration in plain code so the flow is predictable and testable, and a hard stop before anything is merged.
