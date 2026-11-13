@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import WorkRow from '../components/WorkRow.astro';
-import { site, experience } from '../site.config';
+import { site, experience, stats } from '../site.config';
 import { getWork, getWriting, formatDate, url } from '../lib/content';
 
 const work = (await getWork()).filter((entry) => entry.data.featured);
@@ -35,13 +35,26 @@ const jsonLd = {
     />
     <div class="mt-10 grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
       <p class="max-w-xl text-lg leading-relaxed text-muted">
-        <span class="text-fg">{site.name}</span>, {site.role.toLowerCase()} in {site.location}. {site.intro}
+        <span class="text-fg">{site.name}</span>, {site.role.toLowerCase()} in {site.location}.{' '}{site.intro}
       </p>
       <div class="flex flex-wrap gap-3">
         <a href={url('/work/')} class="btn btn-primary">See my work <span aria-hidden="true">→</span></a>
         <a href={url('/resume/')} class="btn btn-ghost">Résumé</a>
       </div>
     </div>
+  </section>
+
+  <section class="container-page mb-24" aria-label="Career in numbers">
+    <dl class="grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      {
+        stats.map((stat) => (
+          <div class="flex flex-col-reverse bg-surface p-6">
+            <dt class="mt-1 text-sm text-muted">{stat.label}</dt>
+            <dd class="font-serif text-5xl tracking-tight">{stat.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
   </section>
 
   <section class="container-page" aria-labelledby="work-heading">

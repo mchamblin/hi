@@ -8,18 +8,36 @@ import { site, skills } from '../site.config';
   <PageHeader label="About" title="A bit <em>about me</em>." />
   <div class="container-page grid gap-14 lg:grid-cols-[1fr_18rem]">
     <div class="prose">
-      {/* TODO: replace with your own story. Three or four short paragraphs is plenty. */}
       <p>
-        Start with who you are and what you are best at, in plain language. A hiring manager should know within two
-        sentences what kind of role you fit.
+        I’m a backend and platform engineer. I like the unglamorous middle of a system: the content API, the event bus,
+        the CDN rules, the release pipeline. When those work, editors publish in seconds and nobody thinks about them.
       </p>
       <p>
-        Then the arc: where you have worked, what you were trusted with, and the thread that connects it. Pick one or
-        two moments you are proud of and say why.
+        I spent more than ten years at Turner, WarnerMedia, and Warner Bros. Discovery, the same company under three
+        names. I started on the front end of NBA.com and the NBA League Pass storefront, moved to the site and API for
+        Turner Classic Movies, and then to the shared publishing platform behind HBO.com, TCM.com, DC.com, and other
+        brand sites.
       </p>
       <p>
-        Close with what you are looking for next, and a line about life outside work so there is a person on the page.
+        On that platform my work shifted from writing features to designing how the pieces fit. I co-designed its Kafka
+        event bus, led the backend side of moving TCM.com onto it, and designed a publishing path that replaces a
+        whole-site rebuild with a single JSON manifest. Along the way I wrote ten architecture decision records and
+        reviewed more than 1,700 pull requests.
       </p>
+      <p>
+        I write things down. Runbooks, migration plans, and developer guides are part of how I ship, because a system
+        that only one person understands is a liability. I also take incidents seriously: I’ve written the post-incident
+        reports and then filed and driven the hardening work that follows.
+      </p>
+      <p>
+        Lately I’ve been working with AI coding tools every day, and I built a proof-of-concept agent pipeline that
+        triages and drafts fixes for vulnerability tickets while leaving the merge decision to a person.
+      </p>
+      <p>
+        I’m looking for a backend or platform engineering role where the problems are architectural and the team cares
+        about operating what it builds.
+      </p>
+      {/* TODO: add a line about life outside work so there is a person on the page. */}
       <p>
         The fastest way to reach me is <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>

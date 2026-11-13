@@ -3,6 +3,7 @@ title: A sample post to replace
 description: One or two posts about how you think are worth more than ten about tools. Write about a decision you made and why.
 date: 2026-11-01
 tags: [sample]
+draft: true
 ---
 
 Good topics for a job-search portfolio:
