@@ -80,9 +80,11 @@ const jsonLd = {
                 <p class="text-lg font-medium">{job.title}</p>
                 <p class="text-muted">{job.company}</p>
               </div>
-              <p class="label sm:pt-1.5">
-                {job.start} – {job.end}
-              </p>
+              {job.start && (
+                <p class="label sm:pt-1.5">
+                  {job.start} – {job.end}
+                </p>
+              )}
             </li>
           ))
         }

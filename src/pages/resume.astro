@@ -24,9 +24,7 @@ import { site, experience, education, skills } from '../site.config';
       {
         experience.map((job) => (
           <div class="mt-5 grid gap-x-8 gap-y-1 border-t border-line pt-5 sm:grid-cols-[8rem_1fr] print:grid-cols-[8rem_1fr] print:break-inside-avoid">
-            <p class="label pt-1">
-              {job.start} – {job.end}
-            </p>
+            <p class="label pt-1">{job.start && `${job.start} – ${job.end}`}</p>
             <div>
               <h3 class="text-lg font-semibold">
                 {job.title}, <span class="font-normal">{job.company}</span>

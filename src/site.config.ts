@@ -6,21 +6,21 @@
 export const site = {
   name: 'Matt Chamblin',
   initials: 'MC',
-  role: 'Software Engineer', // TODO your target title
+  role: 'Senior Software Engineer',
   location: 'Atlanta, GA', // TODO confirm
   // Shown in the hero. Wrap a phrase in <em> to give it the accent treatment.
   headline: 'I build the <em>platforms</em> behind big media sites.',
   intro:
-    'For more than ten years I have shipped the backend and platform work behind HBO.com, TCM.com, and NBA.com: content APIs, event-driven publishing, CDN routing, and the release tooling around them. I am looking for my next platform or backend role.',
+    'For twelve years I have shipped the backend and platform work behind HBO.com, TCM.com, and NBA.com: content APIs, event-driven publishing, CDN routing, and the release tooling around them. I am looking for my next platform or backend role.',
   description:
     'Matt Chamblin is a backend and platform engineer: Node.js, GraphQL, Kafka, Next.js, and CDN work behind HBO.com, TCM.com, and NBA.com.',
   // Set to false once you have accepted an offer.
   available: true,
   availableLabel: 'Open to new roles',
-  email: 'hello@example.com', // TODO
+  email: 'mchamblin@gmail.com',
   social: [
     { label: 'GitHub', href: 'https://github.com/mchamblin' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-handle' }, // TODO
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mchamb4324/' },
   ],
   nav: [
     { label: 'Work', href: '/work/' },
@@ -35,29 +35,29 @@ export const stats = [
   { value: '2,337', label: 'pull requests authored since 2018' },
   { value: '1,749', label: 'pull requests reviewed, from 56 engineers' },
   { value: '10', label: 'architecture decision records written' },
-  { value: '10+', label: 'years shipping for HBO, TCM, and the NBA' },
+  { value: '12', label: 'years shipping for HBO, TCM, and the NBA' },
 ];
 
 export interface Job {
   company: string;
   title: string;
-  start: string;
-  end: string;
+  // Leave start and end out to hide the dates for a role.
+  start?: string;
+  end?: string;
   location?: string;
   summary?: string;
   highlights: string[];
 }
 
-// TODO confirm official job titles and employer names for each period.
 export const experience: Job[] = [
   {
     company: 'Warner Bros. Discovery',
-    title: 'Software Engineer, Publishing Platform',
+    title: 'Senior Software Engineer, Global Entertainment Platform',
     start: '2021',
     end: '2026',
     location: 'Atlanta, GA',
     summary:
-      'Backend and platform engineering on the internal multi-brand publishing platform behind HBO.com, TCM.com, DC.com, and other brand sites.',
+      'Backend and platform engineering on the multi-brand publishing platform behind HBO.com, TCM.com, DC.com, and other brand sites.',
     highlights: [
       'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Shipped dark to production behind per-brand flags; a dev pilot measured 5 to 15 seconds per publish.',
       'Co-architected and led the build of a Kafka event bus that replaced SQS, RabbitMQ, Redis queues, and SNS. Top contributor to the shared client library used by 13 services and Lambdas.',
@@ -72,23 +72,23 @@ export const experience: Job[] = [
   },
   {
     company: 'WarnerMedia · Turner Classic Movies',
-    title: 'Software Engineer, TCM.com',
+    title: 'Senior Software Engineer, TCM.com',
     start: '2020',
     end: '2021',
     location: 'Atlanta, GA',
     summary: 'Site and API for TCM.com and its apps. Continued to maintain both through 2025.',
     highlights: [
       'Primary owner of the Node.js API behind the TCM site and apps: schedules, video on demand, and partner feeds.',
-      'Hardened the API:input validation and parameterized queries across its routes, and token authentication on write routes.',
+      'Hardened the API: input validation and parameterized queries across its routes, and token authentication on write routes.',
       'Rewrote the live “What’s On Now” feed and built a single-runner video ingest job using a database lock.',
       'Core Drupal 8 developer on TCM.com: CDN purge tied to cache-tag invalidation, schema.org schedule markup, and search autocomplete ranking.',
       'Lead front-end developer for the launch of the subscriber email preference center.',
     ],
   },
   {
-    company: 'Turner · NBA Digital',
-    title: 'Software Engineer, NBA.com',
-    start: '2016',
+    company: 'Turner Broadcasting System',
+    title: 'Senior Web Developer, NBA.com',
+    start: '2014',
     end: '2020',
     location: 'Atlanta, GA',
     summary: 'Fan-facing features on NBA.com and the NBA League Pass subscription storefront.',
@@ -99,10 +99,53 @@ export const experience: Job[] = [
       'Carried out the NBA.com HTTPS migration and built GDPR consent and CCPA “Do Not Sell” compliance features.',
     ],
   },
+  {
+    company: 'National Public Radio',
+    title: 'Web and UX Developer',
+    start: '2013',
+    end: '2014',
+    location: 'Washington, DC',
+    highlights: [
+      'Developed front-end user interfaces for NPR’s content distribution portal.',
+      'Worked in an Agile Scrum development team.',
+      'Built in a Java environment using CSS, HTML, and JavaScript.',
+    ],
+  },
+  {
+    company: 'Freelance',
+    title: 'Web and UX Developer',
+    start: '2012',
+    end: 'Present', // TODO confirm this is still current
+    highlights: ['Developed websites with Drupal, WordPress, HTML, CSS, and JavaScript.'],
+  },
+  {
+    company: 'Washington Episcopal School',
+    title: 'Technology and Spanish Teacher; Technology Administrator',
+    start: '2006',
+    end: '2012',
+    location: 'Bethesda, MD',
+    highlights: [
+      'Taught middle school students web programming, including HTML and CSS, multimedia production, and Microsoft Office.',
+      'Supported student and teacher technology needs school-wide.',
+      'Taught Spanish and directed a two-week student exchange program in Granada, Spain.',
+    ],
+  },
+  {
+    company: 'Thornton Friends School',
+    title: 'Technology and Spanish Teacher; Technology Director',
+    start: '2002',
+    end: '2006',
+    location: 'Alexandria, VA',
+    highlights: [
+      'Taught a multitude of courses at a small Quaker school serving nontraditional high school students.',
+      'Implemented and supported the school computer network, including a computer lab and classroom computers.',
+      'Helped teachers use technology efficiently in their classes.',
+    ],
+  },
 ];
 
 export const education = [
-  { school: 'University Name', credential: 'B.S., Field of Study', year: '2010' }, // TODO
+  { school: 'Guilford College', credential: 'B.A., English', year: '1993 – 1998' },
 ];
 
 export const skills = [

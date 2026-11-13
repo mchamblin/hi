@@ -1,9 +1,9 @@
 ---
 title: NBA.com and the League Pass storefront
-summary: Four years building fan-facing features for NBA.com and the subscription storefront for NBA League Pass.
-role: Front-end and Drupal developer
-company: Turner · NBA Digital
-year: "2016–2020"
+summary: Six years building fan-facing features for NBA.com and the subscription storefront for NBA League Pass.
+role: Senior Web Developer
+company: Turner Broadcasting System
+year: "2014–2020"
 stack: [Angular, TypeScript, Drupal 8, PHP, Twig, SCSS]
 metrics:
   - { value: "94%", label: "test coverage gate on the storefront" }
