@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import WorkRow from '../../components/WorkRow.astro';
+import { getWork } from '../../lib/content';
+
+const work = await getWork();
+---
+
+<Base title="Work" description="Case studies and selected projects.">
+  <PageHeader
+    label="Work"
+    title="Things I’ve <em>shipped</em>."
+    lede="Case studies with the context, the decisions I made, and what changed as a result."
+  />
+  <div class="container-page">
+    <div class="border-b border-line">
+      {work.map((entry, index) => <WorkRow entry={entry} index={index} />)}
+    </div>
+  </div>
+</Base>

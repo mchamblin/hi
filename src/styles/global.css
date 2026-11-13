@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Design tokens. Change --accent to rebrand the whole site. */
+:root {
+  color-scheme: light;
+  --bg: oklch(0.985 0.005 85);
+  --surface: oklch(0.96 0.007 85);
+  --fg: oklch(0.2 0.01 60);
+  --muted: oklch(0.48 0.012 60);
+  --line: oklch(0.88 0.008 80);
+  --accent: oklch(0.55 0.19 32);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: oklch(0.16 0.006 60);
+  --surface: oklch(0.205 0.007 60);
+  --fg: oklch(0.94 0.006 85);
+  --muted: oklch(0.69 0.01 70);
+  --line: oklch(0.29 0.008 60);
+  --accent: oklch(0.76 0.15 48);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 68rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  /* Small uppercase mono label used for section names and metadata. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .display em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .link {
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s, color 0.2s;
+  }
+  .link:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid var(--fg);
+    font-size: 0.925rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn-primary {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .btn-ghost {
+    border-color: var(--line);
+  }
+  .btn-ghost:hover {
+    border-color: var(--fg);
+  }
+
+  /* Long-form content (case studies, posts, about). */
+  .prose {
+    max-width: 42rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose > * + * {
+    margin-top: 1.25em;
+  }
+  .prose h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-top: 2.25em;
+  }
+  .prose h3 {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-top: 2em;
+  }
+  .prose a {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 0.2em;
+  }
+  .prose a:hover {
+    color: var(--accent);
+  }
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  .prose ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  .prose li + li {
+    margin-top: 0.4em;
+  }
+  .prose li::marker {
+    color: var(--muted);
+  }
+  .prose blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 1.1em;
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+  .prose :not(pre) > code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 0.3em;
+    padding: 0.1em 0.35em;
+  }
+  .prose pre {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    padding: 1.1rem 1.25rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .prose img {
+    border-radius: 0.6rem;
+    border: 1px solid var(--line);
+  }
+  .prose hr {
+    border-color: var(--line);
+    margin-block: 2.5em;
+  }
+}
+
+/* Sections fade up as they scroll into view, where the browser supports it. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 1.5rem;
+    }
+  }
+  @keyframes pulse-dot {
+    50% {
+      opacity: 0.35;
+    }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html {
+    font-size: 11pt;
+    background: white;
+  }
+}

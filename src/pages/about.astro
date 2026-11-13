@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site, skills } from '../site.config';
+---
+
+<Base title="About" description={`About ${site.name}.`}>
+  <PageHeader label="About" title="A bit <em>about me</em>." />
+  <div class="container-page grid gap-14 lg:grid-cols-[1fr_18rem]">
+    <div class="prose">
+      {/* TODO: replace with your own story. Three or four short paragraphs is plenty. */}
+      <p>
+        Start with who you are and what you are best at, in plain language. A hiring manager should know within two
+        sentences what kind of role you fit.
+      </p>
+      <p>
+        Then the arc: where you have worked, what you were trusted with, and the thread that connects it. Pick one or
+        two moments you are proud of and say why.
+      </p>
+      <p>
+        Close with what you are looking for next, and a line about life outside work so there is a person on the page.
+      </p>
+      <p>
+        The fastest way to reach me is <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </div>
+
+    <aside class="space-y-8">
+      {
+        skills.map((group) => (
+          <div class="border-t border-line pt-4">
+            <h2 class="label">{group.group}</h2>
+            <ul class="mt-3 space-y-1.5">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </aside>
+  </div>
+</Base>

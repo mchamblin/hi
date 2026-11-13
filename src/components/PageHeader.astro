@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  lede?: string;
+}
+
+const { label, title, lede } = Astro.props;
+---
+
+<header class="container-page pb-10 pt-16 sm:pb-14 sm:pt-24">
+  <p class="label">{label}</p>
+  <h1 class="display mt-4 font-serif text-[clamp(2.75rem,7vw,5rem)] leading-none tracking-tight" set:html={title} />
+  {lede && <p class="mt-6 max-w-2xl text-lg text-muted">{lede}</p>}
+</header>

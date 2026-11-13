@@ -1,0 +1,93 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getWork, url } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const work = await getWork();
+  return work.map((entry, index) => ({
+    params: { slug: entry.id },
+    props: { entry, next: work[(index + 1) % work.length] },
+  }));
+}
+
+const { entry, next } = Astro.props;
+const { title, summary, role, year, company, stack, metrics, links } = entry.data;
+const { Content } = await render(entry);
+
+const facts = [
+  { label: 'Role', value: role },
+  ...(company ? [{ label: 'Company', value: company }] : []),
+  { label: 'Year', value: year },
+  ...(stack.length ? [{ label: 'Stack', value: stack.join(', ') }] : []),
+];
+---
+
+<Base title={title} description={summary} type="article">
+  <article>
+    <header class="container-page pb-12 pt-16 sm:pt-24">
+      <a href={url('/work/')} class="label link">← Work</a>
+      <h1
+        class="mt-6 max-w-4xl font-serif text-[clamp(2.75rem,7vw,5.5rem)] leading-none tracking-tight"
+        transition:name={`work-${entry.id}`}
+      >
+        {title}
+      </h1>
+      <p class="mt-6 max-w-2xl text-xl leading-relaxed text-muted">{summary}</p>
+
+      <dl class="mt-12 grid gap-x-8 gap-y-6 border-t border-line pt-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          facts.map((fact) => (
+            <div>
+              <dt class="label">{fact.label}</dt>
+              <dd class="mt-1.5">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      {
+        metrics.length > 0 && (
+          <dl class="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
+            {metrics.map((metric) => (
+              <div class="flex flex-col-reverse bg-surface p-6">
+                <dt class="mt-1 text-sm text-muted">{metric.label}</dt>
+                <dd class="font-serif text-5xl tracking-tight text-accent">{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
+    </header>
+
+    <div class="container-page">
+      <div class="prose">
+        <Content />
+      </div>
+      {
+        links.length > 0 && (
+          <div class="mt-12 flex flex-wrap gap-3">
+            {links.map((link) => (
+              <a href={link.href} class="btn btn-ghost" rel="noopener">
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </article>
+
+  {
+    next && next.id !== entry.id && (
+      <div class="container-page mt-24">
+        <a href={url(`/work/${next.id}/`)} class="group block border-t border-line pt-8">
+          <p class="label">Next project</p>
+          <p class="mt-3 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent sm:text-5xl">
+            {next.data.title} <span aria-hidden="true">→</span>
+          </p>
+        </a>
+      </div>
+    )
+  }
+</Base>

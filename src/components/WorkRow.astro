@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../lib/content';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+  index: number;
+}
+
+const { entry, index } = Astro.props;
+const { title, summary, year, stack } = entry.data;
+---
+
+<a
+  href={url(`/work/${entry.id}/`)}
+  class="reveal group grid gap-x-8 gap-y-3 border-t border-line py-8 transition-colors hover:border-fg sm:grid-cols-[3rem_1fr_auto] sm:py-10"
+>
+  <span class="label pt-2">{String(index + 1).padStart(2, '0')}</span>
+  <div>
+    <h3
+      class="font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-accent sm:text-4xl"
+      transition:name={`work-${entry.id}`}
+    >
+      {title}
+    </h3>
+    <p class="mt-3 max-w-xl text-muted">{summary}</p>
+    <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1">
+      {stack.slice(0, 4).map((item) => <li class="label">{item}</li>)}
+    </ul>
+  </div>
+  <div class="flex items-start gap-3 sm:pt-2">
+    <span class="label">{year}</span>
+    <span class="text-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">→</span>
+  </div>
+</a>

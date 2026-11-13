@@ -1,0 +1,47 @@
+---
+import { site } from '../site.config';
+import { url } from '../lib/content';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path.startsWith(url(href));
+---
+
+<header class="no-print sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md">
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href={url('/')} class="flex items-center gap-2.5 font-medium tracking-tight" aria-label={`${site.name}, home`}>
+      <span
+        class="grid size-8 place-items-center rounded-full bg-fg font-mono text-[0.7rem] font-semibold text-bg"
+        aria-hidden="true">{site.initials}</span
+      >
+      <span class="hidden sm:inline">{site.name}</span>
+    </a>
+
+    <nav aria-label="Primary" class="flex items-center gap-1 text-sm">
+      {
+        site.nav.map((item) => (
+          <a
+            href={url(item.href)}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            class="rounded-full px-2.5 py-1.5 text-muted transition-colors hover:text-fg aria-[current=page]:text-fg sm:px-3"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <button
+        type="button"
+        data-theme-toggle
+        aria-label="Toggle dark mode"
+        class="ml-1 grid size-9 cursor-pointer place-items-center rounded-full border border-line text-muted transition-colors hover:border-fg hover:text-fg"
+      >
+        <svg class="size-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+          <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path>
+        </svg>
+        <svg class="hidden size-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
