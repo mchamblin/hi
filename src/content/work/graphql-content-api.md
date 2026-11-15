@@ -10,6 +10,7 @@ metrics:
   - { value: "28%", label: "of the non-test code on main" }
   - { value: "2-tier", label: "memory and Redis response cache" }
 featured: true
+highlight: { value: "5 yrs", label: "as primary contributor" }
 order: 4
 ---
 

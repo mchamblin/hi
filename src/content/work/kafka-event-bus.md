@@ -10,6 +10,7 @@ metrics:
   - { value: "13", label: "services and Lambdas on the shared library" }
   - { value: "7–8 min", label: "consumer connection delays tracked down and fixed" }
 featured: true
+highlight: { value: "4 → 1", label: "messaging systems" }
 order: 2
 ---
 

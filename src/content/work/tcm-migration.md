@@ -9,6 +9,7 @@ metrics:
   - { value: "~220k", label: "legacy URLs covered by the redirect strategy (estimate)" }
   - { value: "~26k", label: "video redirects served from an edge dictionary" }
 featured: true
+highlight: { value: "~220k", label: "legacy URLs in the redirect strategy" }
 order: 3
 ---
 

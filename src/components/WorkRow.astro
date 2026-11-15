@@ -8,12 +8,12 @@ interface Props {
 }
 
 const { entry, index } = Astro.props;
-const { title, summary, year, stack } = entry.data;
+const { title, summary, year, stack, highlight } = entry.data;
 ---
 
 <a
   href={url(`/work/${entry.id}/`)}
-  class="reveal group grid gap-x-8 gap-y-3 border-t border-line py-8 transition-colors hover:border-fg sm:grid-cols-[3rem_1fr_auto] sm:py-10"
+  class="reveal group grid gap-x-8 gap-y-3 border-t border-line py-8 transition-colors hover:border-fg sm:grid-cols-[3rem_1fr_11rem] sm:py-10"
 >
   <span class="label pt-2">{String(index + 1).padStart(2, '0')}</span>
   <div>
@@ -28,8 +28,18 @@ const { title, summary, year, stack } = entry.data;
       {stack.slice(0, 4).map((item) => <li class="label">{item}</li>)}
     </ul>
   </div>
-  <div class="flex items-start gap-3 sm:pt-2">
-    <span class="label">{year}</span>
-    <span class="text-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">→</span>
+  <div class="flex items-start justify-between gap-3 sm:flex-col sm:items-end sm:pt-2 sm:text-right">
+    <p class="flex items-center gap-3">
+      <span class="label">{year}</span>
+      <span class="text-muted transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">→</span>
+    </p>
+    {
+      highlight && (
+        <p class="text-right sm:mt-4">
+          <span class="block font-serif text-3xl leading-none tracking-tight text-accent sm:text-4xl">{highlight.value}</span>
+          <span class="mt-1.5 block text-xs leading-snug text-muted">{highlight.label}</span>
+        </p>
+      )
+    }
   </div>
 </a>

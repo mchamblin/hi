@@ -9,9 +9,16 @@ export const site = {
   role: 'Senior Software Engineer',
   location: 'Atlanta, GA', // TODO confirm
   // Shown in the hero. Wrap a phrase in <em> to give it the accent treatment.
-  headline: 'I build the <em>platforms</em> behind big media sites.',
+  headline: 'I build the <em>platforms</em> behind HBO.com, TCM.com, and NBA.com.',
   intro:
-    'For twelve years I have shipped the backend and platform work behind HBO.com, TCM.com, and NBA.com: content APIs, event-driven publishing, CDN routing, and the release tooling around them. I am looking for my next platform or backend role.',
+    'Twelve years of backend and platform engineering at Warner Bros. Discovery: content APIs, event-driven publishing, CDN routing, and the release tooling around them. Now looking for my next platform or backend role.',
+  // The "at a glance" panel beside the intro on the home page.
+  glance: [
+    { label: 'Role', value: 'Senior Software Engineer' },
+    { label: 'Based in', value: 'Atlanta, GA' },
+    { label: 'Focus', value: 'Content APIs, event-driven systems, CDN and release engineering' },
+    { label: 'Stack', value: 'Node.js · GraphQL · Kafka · Next.js · AWS' },
+  ],
   description:
     'Matt Chamblin is a backend and platform engineer: Node.js, GraphQL, Kafka, Next.js, and CDN work behind HBO.com, TCM.com, and NBA.com.',
   // Set to false once you have accepted an offer.

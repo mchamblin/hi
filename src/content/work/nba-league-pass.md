@@ -8,6 +8,7 @@ stack: [Angular, TypeScript, Drupal 8, PHP, Twig, SCSS]
 metrics:
   - { value: "94%", label: "test coverage gate on the storefront" }
   - { value: "154", label: "files changed in the HTTPS migration" }
+highlight: { value: "94%", label: "coverage gate on the storefront" }
 order: 7
 ---
 

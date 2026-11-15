@@ -10,6 +10,7 @@ metrics:
   - { value: "~11 min", label: "per publish, before" }
   - { value: "5–15 s", label: "per publish in the dev pilot" }
 featured: true
+highlight: { value: "5–15 s", label: "per publish in the dev pilot, down from ~11 min" }
 order: 1
 ---
 

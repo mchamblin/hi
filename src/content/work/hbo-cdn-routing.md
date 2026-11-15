@@ -9,6 +9,7 @@ metrics:
   - { value: "4", label: "environments, dev through production" }
   - { value: "Mar 2022", label: "cutover completed" }
   - { value: "~9k", label: "redirects refreshed in a 2026 update" }
+highlight: { value: "Mar 2022", label: "cutover completed" }
 order: 6
 ---
 

@@ -13,6 +13,8 @@ const work = defineCollection({
     stack: z.array(z.string()).default([]),
     // Up to three headline numbers shown at the top of the case study.
     metrics: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+    // One headline result shown beside the project in lists.
+    highlight: z.object({ value: z.string(), label: z.string() }).optional(),
     links: z.array(z.object({ label: z.string(), href: z.url() })).default([]),
     featured: z.boolean().default(false),
     order: z.number().default(99),
