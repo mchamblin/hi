@@ -46,6 +46,6 @@ I also wrote the sprint plan and 15 pages of documentation: an architecture over
 
 ## Outcome
 
-The new path shipped dark to production behind per-brand flags and was validated in the dev environment, where a pilot on allowlisted routes measured **5 to 15 seconds per publish**. As of November 2026, production enablement was rolling out brand by brand.
+The new path shipped to production behind per-brand feature flags. A pilot on allowlisted routes in the dev environment measured **5 to 15 seconds per publish**. As of November 2026, production enablement was rolling out brand by brand.
 
 The lesson I took from it: the migration plan matters as much as the design. Gating by brand and by route let us ship the new path next to the old one for months without a risky switchover.

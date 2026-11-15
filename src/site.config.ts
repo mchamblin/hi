@@ -66,14 +66,14 @@ export const experience: Job[] = [
     summary:
       'Backend and platform engineering on the multi-brand publishing platform behind HBO.com, TCM.com, DC.com, and other brand sites.',
     highlights: [
-      'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Shipped dark to production behind per-brand flags; a dev pilot measured 5 to 15 seconds per publish.',
+      'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Shipped to production behind per-brand feature flags; a dev pilot measured 5 to 15 seconds per publish.',
       'Co-architected and led the build of a Kafka event bus that replaced SQS, RabbitMQ, Redis queues, and SNS. Top contributor to the shared client library used by 13 services and Lambdas.',
       'Wrote 10 architecture decision records covering 9 decisions; 7 approved or accepted.',
       'Primary contributor to the GraphQL content API for all brand sites: two-tier memory and Redis response cache, search integrations, and the schedule API behind the HBO.com and TCM.com schedule pages.',
       'Tech lead for the backend, CDN, and search work that moved TCM.com onto the platform, including a redirect strategy for roughly 220,000 legacy URLs.',
       'Built the CDN services and page-by-page routing that moved HBO.com from its legacy CMS to the platform (cutover March 2022).',
       'Created the release automation repo: release-candidate tagging across repos, deploy notifications, and scheduled maintenance jobs. Rolled a shared error-monitoring Terraform module out to 12 repos in one week.',
-      'Built the working proof of concept for a multi-agent AI pipeline that dedupes, triages, drafts fixes for, reviews, and verifies vulnerability tickets, stopping at human review.',
+      'Built a multi-agent AI pipeline that dedupes, triages, drafts fixes for, reviews, and verifies vulnerability tickets, stopping at human review.',
       'Rolled out Redis authentication and TLS across 12 production markets for a sister team’s international platform, with the runbook.',
     ],
   },
