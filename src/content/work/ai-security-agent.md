@@ -11,7 +11,7 @@ order: 5
 
 ## Context
 
-Engineering teams were spending real time on vulnerability tickets before any fixing started. The same issue would show up as a scanner finding, a ticket, and a dependency alert, spread across many repositories and cloud accounts, and someone had to connect them by hand.
+Engineers were spending a lot of time on vulnerability tickets before anyone started fixing anything. The same issue could show up as a scanner finding, a ticket and a dependency alert, spread across many repositories and cloud accounts. Someone had to connect them by hand.
 
 ## What I built
 
@@ -23,11 +23,11 @@ The pipeline takes each ticket through five steps:
 4. **Secure code review**: a second agent reviews that pull request.
 5. **Verification**: rebuild and rescan to confirm the finding is gone.
 
-It then stops at "ready for review". People merge and close; the agents never do.
+It stops at "ready for review". People do the merging and the closing.
 
 The pieces I wrote:
 
-- A deterministic TypeScript orchestrator. The control flow is ordinary code, and the agents are called for the judgement steps only.
+- A deterministic TypeScript orchestrator. The control flow is ordinary code, and the agents are called for the judgment steps only.
 - Five agent handlers, each a configuration file plus a handler.
 - My own ticket and pull-request write tools, with a strict contract for which statuses and labels an agent may set.
 - A worker that rebuilds a container image and rescans it with Trivy.

@@ -16,7 +16,7 @@ order: 4
 
 ## Context
 
-Every brand site on the publishing platform gets its content from one GraphQL API. Pages, navigation, search results, and TV schedules all come through it, so its speed and uptime are the sites' speed and uptime.
+Every brand site on the publishing platform gets its content from one GraphQL API. Pages, navigation, search results, and TV schedules all come through it. When the API is slow, every site is slow.
 
 I was the top committer on its main branch and the author of the largest share of the code that is still there.
 
@@ -47,4 +47,4 @@ All of it is resolved.
 
 The API serves every brand site on the platform, with a two-tier cache in front of it and search and schedules built in.
 
-One rule I apply to shared platforms: a code path that serves several brands needs tests that cover every brand, not only the one being changed.
+When a code path serves several brands, I test all of them, not just the one I’m changing.

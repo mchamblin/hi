@@ -15,7 +15,7 @@ order: 6
 
 ## Context
 
-HBO.com was moving from a legacy CMS to the company's new publishing platform. A site that size could not switch in one night. The plan was to move it page by page, with both systems serving the same domain for months.
+HBO.com was moving from a legacy CMS to the company's new publishing platform. A site that size can’t switch over in one night. The plan was to move it page by page, with both systems serving the same domain for months.
 
 ## What I did
 
@@ -23,7 +23,7 @@ I built the CDN layer that made that possible:
 
 - A reusable infrastructure-as-code module for a CDN service with **two backends**: the legacy CMS and the new platform.
 - The HBO services for dev, QA, staging, and production.
-- **Page-by-page routing** using edge dictionaries: one lookup for which backend serves a path, plus path patterns and a redirect table. Moving a page to the new platform was a dictionary change, not a deploy.
+- **Page-by-page routing** using edge dictionaries: one lookup for which backend serves a path, plus path patterns and a redirect table. Moving a page to the new platform meant changing one dictionary entry, with no deploy.
 
 After launch I owned the routing layer: incident response, redirect fixes, and keeping the redirect tables current. In 2026 that meant refreshing about 9,000 redirect entries.
 

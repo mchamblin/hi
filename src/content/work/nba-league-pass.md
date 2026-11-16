@@ -37,4 +37,4 @@ In 2019 I moved to the storefront as its primary front-end contributor and drove
 
 ## Outcome
 
-Six years of shipping fan-facing features on a release schedule set by the NBA calendar. When the Playoffs start, the page has to be right the first time.
+I spent six years shipping fan-facing features, and much of that work followed the NBA calendar. A Playoffs page had to be ready before the Playoffs started.

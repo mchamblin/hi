@@ -20,7 +20,7 @@ The publishing platform is a set of services: a CMS, a rendering service, a web 
 
 ## The problem
 
-Those messages travelled over four different systems (SQS, RabbitMQ, Redis-backed queues, and SNS) with no consistent design. Each had its own failure modes, its own monitoring, and its own local setup. Adding a new consumer meant learning whichever one that corner of the platform used.
+Those messages travelled over four different systems (SQS, RabbitMQ, Redis-backed queues, and SNS) with no consistent design. Each one had its own failure modes and its own monitoring. Adding a new consumer meant learning whichever one that corner of the platform used.
 
 ## What I did
 
@@ -30,7 +30,7 @@ Those messages travelled over four different systems (SQS, RabbitMQ, Redis-backe
 
 **Onboarding.** Our platform was new to the central Kafka service. I made the first configuration changes for it (service account, environments, first topic) and worked through the access requests with the central cloud and release teams.
 
-**The library.** I was the top contributor to the shared client library that every producer and consumer uses, and cut most of its releases. One piece I'm glad of: an audit-event method that never blocks the main flow and never audits its own audit events.
+**The library.** I was the top contributor to the shared client library that every producer and consumer uses, and cut most of its releases. The library also has an audit-event method that never blocks the main flow and never audits its own audit events.
 
 **The migration.** Each service moved behind a flag, usually dual-running old and new paths first:
 
@@ -49,4 +49,4 @@ I fixed it with job de-duplication and by tuning the session and rebalance timeo
 
 One event bus now carries the platform's publish, save, bulk-update, and refresh messages. The shared library is a dependency of 13 services and Lambdas, and RabbitMQ is decommissioned in every environment.
 
-A design rule that came out of this work: keep long-running work out of message handlers. A handler should acknowledge quickly and hand the job to something built to run for minutes.
+I now keep long-running work out of message handlers. Acknowledge the message quickly, then hand the job to something built to run for minutes.

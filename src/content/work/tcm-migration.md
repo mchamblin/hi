@@ -19,7 +19,7 @@ TCM.com ran for years on its own Drupal site and Node.js API. I had been a core 
 
 ## The problem
 
-A migration like this is mostly about what must not break. TCM has a deep archive: articles, a film database, monthly programming pages, and years of video clips, all with URLs that other sites and search engines link to. The site also depended on its own search setup and its own caching.
+The main risk in this migration was breaking what people already use. TCM has a deep archive: articles, a film database, monthly programming pages, and years of video clips, all with URLs that other sites and search engines link to. The site also depended on its own search setup and its own caching.
 
 ## What I did
 
@@ -39,4 +39,4 @@ A migration like this is mostly about what must not break. TCM has a deep archiv
 
 The cutover went out environment by environment, staging first, behind a toggle. The redirect layer keeps the archive's inbound links working, and TCM search is served through the same content API as the other brand sites.
 
-Having worked on the legacy site made the difference here. I knew which odd URL patterns and feeds existed because I had maintained them.
+I had worked on the legacy site for years, so I already knew which odd URL patterns and feeds existed.

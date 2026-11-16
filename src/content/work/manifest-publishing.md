@@ -22,7 +22,7 @@ The company's internal publishing platform serves a family of brand sites, inclu
 
 Every publish rebuilt the whole brand site. On the largest site, publishing a single page recompiled all 824 pages. That took about 11 minutes, roughly 8 of them in the Next.js build, and shipped an archive of more than 200 MB to a freshly started web worker.
 
-Editors waited minutes to see a typo fix go live, and every publish carried the risk of a full deploy.
+A typo fix could take minutes to go live, and every publish was effectively a full deploy.
 
 ## What I did
 
@@ -48,4 +48,4 @@ I also wrote the sprint plan and 15 pages of documentation: an architecture over
 
 The new path launched in production behind per-brand feature flags, and brand sites on the platform have moved onto it. In the pre-launch pilot, publishes on allowlisted routes took **5 to 15 seconds**, against about 11 minutes on the old path.
 
-What made the launch safe was the rollout design. Gating by brand and by route let the new path run next to the old one, so there was never a risky switchover.
+The launch was safe because of how we rolled it out. Each brand and route opted in separately, so the new path ran next to the old one and nothing had to switch over in one go.
