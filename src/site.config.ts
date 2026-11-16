@@ -9,9 +9,9 @@ export const site = {
   role: 'Senior Software Engineer',
   location: 'Atlanta, GA', // TODO confirm
   // Shown in the hero. Wrap a phrase in <em> to give it the accent treatment.
-  headline: 'I build the <em>platforms</em> behind HBO.com, TCM.com, and NBA.com.',
+  headline: 'I <em>design and ship</em> the platforms behind HBO.com, TCM.com, and NBA.com.',
   intro:
-    'Twelve years of backend and platform engineering at Warner Bros. Discovery: content APIs, event-driven publishing, CDN routing, and the release tooling around them. Now looking for my next platform or backend role.',
+    'Twelve years at Warner Bros. Discovery, where I designed the Kafka event bus its publishing platform runs on and replaced an 11-minute full-site rebuild with a one-page publish. Now looking for my next backend or platform role.',
   // The "at a glance" panel beside the intro on the home page.
   glance: [
     { label: 'Role', value: 'Senior Software Engineer' },
