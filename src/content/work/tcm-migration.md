@@ -15,7 +15,7 @@ order: 3
 
 ## Context
 
-TCM.com ran for years on its own Drupal site and Node.js API. I had been a core developer on both since 2020, so when the company decided to move the site onto its shared publishing platform, I was named co-tech lead for the work.
+TCM.com ran for years on its own Drupal site and Node.js API. I had been a core developer on both since 2020, so when the company decided to move the site onto its shared publishing platform, I was named tech lead for the backend, CDN, and search work.
 
 ## The problem
 
@@ -27,7 +27,7 @@ A migration like this is mostly about what must not break. TCM has a deep archiv
 
 **CDN cutover.** I built the switchover from the legacy origin to the new platform as per-environment CDN configuration with a backend toggle, so we could cut over staging first and flip back quickly if needed.
 
-**Search.** I wrote the approved decision record for moving TCM site search between hosted search providers and co-wrote its security questionnaire. On the implementation side I:
+**Search.** I wrote the approved decision record for moving TCM site search between hosted search providers and took it through security review. On the implementation side I:
 
 - Added TCM search support to the content API.
 - Rebuilt search ingestion as a streaming pipeline with per-brand transformers and hash-based change detection, so unchanged documents are skipped.

@@ -26,7 +26,7 @@ Those messages travelled over four different systems (SQS, RabbitMQ, Redis-backe
 
 **Discovery.** I inventoried how messaging was used across the wider organization and wrote a requirements matrix comparing Kafka, RabbitMQ, Redis queues, and SNS/SQS.
 
-**Decisions.** I designed the unified event bus on the company's managed Kafka service and wrote up the decision record with a colleague, which was approved. I wrote a second record for the content-feed architecture on top of it, approved by five reviewers.
+**Decisions.** I designed the unified event bus on the company's managed Kafka service, and its decision record was approved. I wrote a second record for the content-feed architecture on top of it, approved by five reviewers.
 
 **Onboarding.** Our platform was new to the central Kafka service. I made the first configuration changes for it (service account, environments, first topic) and worked through the access requests with the central cloud and release teams.
 
