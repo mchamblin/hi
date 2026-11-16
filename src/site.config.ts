@@ -70,7 +70,7 @@ export const experience: Job[] = [
       'Backend and platform engineering on the multi-brand publishing platform behind HBO.com, TCM.com, DC.com, and other brand sites.',
     highlights: [
       'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Launched in production behind per-brand feature flags; the pre-launch pilot measured 5 to 15 seconds per publish.',
-      'Co-architected and led the build of a Kafka event bus that replaced SQS, RabbitMQ, Redis queues, and SNS. Top contributor to the shared client library used by 13 services and Lambdas.',
+      'Designed and led the build of a Kafka event bus that replaced SQS, RabbitMQ, Redis queues, and SNS. Top contributor to the shared client library used by 13 services and Lambdas.',
       'Wrote 10 architecture decision records covering 9 decisions; 7 approved or accepted.',
       'Primary contributor to the GraphQL content API for all brand sites: two-tier memory and Redis response cache, search integrations, and the schedule API behind the HBO.com and TCM.com schedule pages.',
       'Tech lead for the backend, CDN, and search work that moved TCM.com onto the platform, including a redirect strategy for roughly 220,000 legacy URLs.',
