@@ -37,7 +37,7 @@ Those messages travelled over four different systems (SQS, RabbitMQ, Redis-backe
 - Four ingestion Lambdas from SQS to Kafka, with batching, rate limits, and metrics.
 - The content API's feed consumer, followed by deleting about 1,700 lines of the old SQS code.
 - The URL alias service and the job-status service.
-- The web and rendering services, which I rolled back twice before the integration held.
+- The web and rendering services.
 
 ## The hardest bug
 
@@ -47,6 +47,6 @@ I fixed it with job de-duplication and by tuning the session and rebalance timeo
 
 ## Outcome
 
-One event bus now carries the platform's publish, save, bulk-update, and refresh messages. The shared library is a dependency of 13 services and Lambdas, and the team decommissioned the RabbitMQ broker in every environment.
+One event bus now carries the platform's publish, save, bulk-update, and refresh messages. The shared library is a dependency of 13 services and Lambdas, and RabbitMQ is decommissioned in every environment.
 
-What I'd do differently: move long-running work out of message handlers from day one. A handler should acknowledge quickly and hand the job to something built to run for minutes.
+A design rule that came out of this work: keep long-running work out of message handlers. A handler should acknowledge quickly and hand the job to something built to run for minutes.

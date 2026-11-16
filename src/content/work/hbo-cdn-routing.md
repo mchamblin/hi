@@ -25,7 +25,7 @@ I built the CDN layer that made that possible:
 - The HBO services for dev, QA, staging, and production.
 - **Page-by-page routing** using edge dictionaries: one lookup for which backend serves a path, plus path patterns and a redirect table. Moving a page to the new platform was a dictionary change, not a deploy.
 
-After launch I handled the routing side of incidents, including a redirect loop, and kept the redirect tables current. In 2026 that meant refreshing about 9,000 redirect entries.
+After launch I owned the routing layer: incident response, redirect fixes, and keeping the redirect tables current. In 2026 that meant refreshing about 9,000 redirect entries.
 
 ## Outcome
 

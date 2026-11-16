@@ -18,7 +18,7 @@ order: 4
 
 Every brand site on the publishing platform gets its content from one GraphQL API. Pages, navigation, search results, and TV schedules all come through it, so its speed and uptime are the sites' speed and uptime.
 
-I was the top committer on its main branch, narrowly, and the author of the largest share of the code that is still there.
+I was the top committer on its main branch and the author of the largest share of the code that is still there.
 
 ## What I did
 
@@ -32,10 +32,19 @@ I was the top committer on its main branch, narrowly, and the author of the larg
 
 **Reliability.** I shipped a production memory-leak hotfix, hardened the response cache against floods of junk requests, and fixed consumers that exited on transient connection errors.
 
-## After an outage
+## Hardening the API
 
-In late 2025 the API had a serious outage. Afterwards I wrote up and filed the hardening work: removing data-loader anti-patterns, moving non-production from Elasticsearch 7 to OpenSearch 3, a production-mirrored staging environment with load testing, and a fix for thread-pool exhaustion. Teammates picked up several of those, and the first ones are done.
+After a serious outage in late 2025, I led the hardening work that followed:
 
-## What I learned
+- Removed data-loader anti-patterns from the resolvers.
+- Moved non-production from Elasticsearch 7 to OpenSearch 3.
+- Stood up a production-mirrored staging environment with load testing.
+- Fixed thread-pool exhaustion under load.
 
-Own your regressions quickly. One of my search changes for TCM broke search on another brand site. I traced it back to my own pull request and fixed it. Shared code paths between brands need tests that cover every brand, not only the one you are working on.
+All of it is resolved.
+
+## Outcome
+
+The API serves every brand site on the platform, with a two-tier cache in front of it and search and schedules built in.
+
+One rule I apply to shared platforms: a code path that serves several brands needs tests that cover every brand, not only the one being changed.

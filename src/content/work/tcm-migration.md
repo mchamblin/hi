@@ -33,10 +33,10 @@ A migration like this is mostly about what must not break. TCM has a deep archiv
 - Rebuilt search ingestion as a streaming pipeline with per-brand transformers and hash-based change detection, so unchanged documents are skipped.
 - Built a tool that copies a production search index to non-production. It works past the provider's 10,000-document export limit and refuses to write to production.
 
-**Caching.** I took over the Lambda that purges TCM's caches on publish, fixed its landing-page purging, and rewrote its operations docs.
+**Caching.** I owned the Lambda that purges TCM's caches on publish: I fixed its landing-page purging and rewrote its operations docs.
 
 ## Outcome
 
-The cutover went out environment by environment, staging first, behind a toggle. The redirect layer was built to keep the archive's inbound links working, and TCM search is served through the same content API as the other brand sites.
+The cutover went out environment by environment, staging first, behind a toggle. The redirect layer keeps the archive's inbound links working, and TCM search is served through the same content API as the other brand sites.
 
 Having worked on the legacy site made the difference here. I knew which odd URL patterns and feeds existed because I had maintained them.

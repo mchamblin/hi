@@ -48,4 +48,4 @@ I also wrote the sprint plan and 15 pages of documentation: an architecture over
 
 The new path launched in production behind per-brand feature flags, and brand sites on the platform have moved onto it. In the pre-launch pilot, publishes on allowlisted routes took **5 to 15 seconds**, against about 11 minutes on the old path.
 
-The lesson I took from it: the migration plan matters as much as the design. Gating by brand and by route let us ship the new path next to the old one for months without a risky switchover.
+What made the launch safe was the rollout design. Gating by brand and by route let the new path run next to the old one, so there was never a risky switchover.

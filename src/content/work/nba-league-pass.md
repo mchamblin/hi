@@ -35,6 +35,6 @@ In 2019 I moved to the storefront as its primary front-end contributor and drove
 - A performance refactor guided by Lighthouse audits.
 - Raised the test coverage threshold to 94% and added code owners.
 
-## What I took from it
+## Outcome
 
-High-traffic event pages taught me to respect caching and release discipline. When the Playoffs start, the page has to be right the first time.
+Six years of shipping fan-facing features on a release schedule set by the NBA calendar. When the Playoffs start, the page has to be right the first time.
