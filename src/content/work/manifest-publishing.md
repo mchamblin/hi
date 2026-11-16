@@ -8,9 +8,9 @@ stack: [Next.js, React, Node.js, Fastify, S3, Kafka, Datadog, k6]
 metrics:
   - { value: "824", label: "pages recompiled for a one-page publish, before" }
   - { value: "~11 min", label: "per publish, before" }
-  - { value: "5–15 s", label: "per publish in the dev pilot" }
+  - { value: "5–15 s", label: "per publish in the pre-launch pilot" }
 featured: true
-highlight: { value: "5–15 s", label: "per publish in the dev pilot, down from ~11 min" }
+highlight: { value: "5–15 s", label: "per publish in the pre-launch pilot, down from ~11 min" }
 order: 1
 ---
 
@@ -46,6 +46,6 @@ I also wrote the sprint plan and 15 pages of documentation: an architecture over
 
 ## Outcome
 
-The new path shipped to production behind per-brand feature flags. A pilot on allowlisted routes in the dev environment measured **5 to 15 seconds per publish**. As of November 2026, production enablement was rolling out brand by brand.
+The new path launched in production behind per-brand feature flags, and brand sites on the platform have moved onto it. In the pre-launch pilot, publishes on allowlisted routes took **5 to 15 seconds**, against about 11 minutes on the old path.
 
 The lesson I took from it: the migration plan matters as much as the design. Gating by brand and by route let us ship the new path next to the old one for months without a risky switchover.

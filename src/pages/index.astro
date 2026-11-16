@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import WorkRow from '../components/WorkRow.astro';
-import { site, experience, stats } from '../site.config';
+import { site, experience, stats, shippedFor } from '../site.config';
 import { getWork, getWriting, formatDate, url } from '../lib/content';
 
 const work = (await getWork()).filter((entry) => entry.data.featured);
@@ -69,6 +69,12 @@ const jsonLd = {
         ))
       }
     </dl>
+    <div class="reveal flex flex-wrap items-baseline gap-x-8 gap-y-3 border-b border-line py-6">
+      <p class="label">Shipped for</p>
+      <ul class="flex flex-wrap gap-x-8 gap-y-2 font-serif text-2xl tracking-tight sm:text-3xl">
+        {shippedFor.map((name) => <li>{name}</li>)}
+      </ul>
+    </div>
   </section>
 
   <section class="container-page" aria-labelledby="work-heading">

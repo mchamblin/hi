@@ -20,7 +20,7 @@ export const site = {
     { label: 'Stack', value: 'Node.js · GraphQL · Kafka · Next.js · AWS' },
   ],
   description:
-    'Matt Chamblin is a backend and platform engineer: Node.js, GraphQL, Kafka, Next.js, and CDN work behind HBO.com, TCM.com, and NBA.com.',
+    'Matt Chamblin is a backend and platform engineer: Node.js, GraphQL, Kafka, Next.js, and CDN work behind HBO.com, TCM.com, and NBA.com, and earlier at NPR.',
   // Set to false once you have accepted an offer.
   available: true,
   availableLabel: 'Open to new roles',
@@ -37,12 +37,15 @@ export const site = {
   ],
 } as const;
 
+// Organizations and brands shown in a strip on the home page.
+export const shippedFor = ['HBO', 'Turner Classic Movies', 'NBA', 'DC', 'NPR'];
+
 // Career totals shown on the home and about pages.
 export const stats = [
   { value: '2,337', label: 'pull requests authored since 2018' },
   { value: '1,749', label: 'pull requests reviewed, from 56 engineers' },
   { value: '10', label: 'architecture decision records written' },
-  { value: '12', label: 'years shipping for HBO, TCM, and the NBA' },
+  { value: '14', label: 'years building for the web, from NPR to HBO' },
 ];
 
 export interface Job {
@@ -66,7 +69,7 @@ export const experience: Job[] = [
     summary:
       'Backend and platform engineering on the multi-brand publishing platform behind HBO.com, TCM.com, DC.com, and other brand sites.',
     highlights: [
-      'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Shipped to production behind per-brand feature flags; a dev pilot measured 5 to 15 seconds per publish.',
+      'Designed and built manifest-driven publishing so a page publish writes one JSON manifest instead of recompiling a whole brand site (824 pages and about 11 minutes per publish before). Launched in production behind per-brand feature flags; the pre-launch pilot measured 5 to 15 seconds per publish.',
       'Co-architected and led the build of a Kafka event bus that replaced SQS, RabbitMQ, Redis queues, and SNS. Top contributor to the shared client library used by 13 services and Lambdas.',
       'Wrote 10 architecture decision records covering 9 decisions; 7 approved or accepted.',
       'Primary contributor to the GraphQL content API for all brand sites: two-tier memory and Redis response cache, search integrations, and the schedule API behind the HBO.com and TCM.com schedule pages.',
