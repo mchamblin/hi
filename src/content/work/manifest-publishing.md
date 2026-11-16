@@ -1,5 +1,5 @@
 ---
-title: Publishing a page without rebuilding the site
+title: Publishing pages without a full rebuild
 summary: I designed and built a publishing path where a CMS publish writes one JSON manifest instead of recompiling an entire brand website.
 role: Architect and primary implementer
 company: Warner Bros. Discovery

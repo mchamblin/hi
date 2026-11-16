@@ -1,6 +1,6 @@
 ---
 title: The content API behind every brand site
-summary: For five years I was the primary contributor to the GraphQL API that serves content to a family of brand websites, owning its search, caching, and schedule areas.
+summary: I was the primary contributor to the GraphQL API that serves content to a family of brand websites, owning its search, caching and schedule areas.
 role: Primary contributor
 company: Warner Bros. Discovery
 year: "2021–2026"

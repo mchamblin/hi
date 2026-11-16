@@ -1,5 +1,5 @@
 ---
-title: An AI agent pipeline for vulnerability tickets
+title: AI agent pipeline for vulnerability tickets
 summary: I built a multi-agent pipeline that dedupes, triages, drafts fixes for, reviews, and verifies vulnerability tickets, then stops for a human.
 role: Primary developer
 company: Warner Bros. Discovery
