@@ -11,7 +11,7 @@ export const site = {
   // Shown in the hero. Wrap a phrase in <em> to give it the accent treatment.
   headline: 'I <em>design and ship</em> the platforms behind HBO.com, TCM.com, and NBA.com.',
   intro:
-    'Twelve years at Warner Bros. Discovery, where I designed the Kafka event bus its publishing platform runs on and replaced an 11-minute full-site rebuild with a one-page publish. Now looking for my next backend or platform role.',
+    'Two years at NPR, then twelve at Warner Bros. Discovery, where I designed the Kafka event bus its publishing platform runs on and replaced an 11-minute full-site rebuild with a one-page publish. Now looking for my next backend or platform role.',
   // The "at a glance" panel beside the intro on the home page.
   glance: [
     { label: 'Role', value: 'Senior Software Engineer' },
