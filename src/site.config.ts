@@ -30,10 +30,10 @@ export const site = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mchamb4324/' },
   ],
   nav: [
-    { label: 'Work', href: '/work/' },
-    { label: 'Writing', href: '/writing/' },
-    { label: 'About', href: '/about/' },
-    { label: 'Résumé', href: '/resume/' },
+    // `match` lists the other paths that should light up this item.
+    { label: 'Portfolio', href: '/portfolio/', match: ['/work/', '/writing/'] },
+    { label: 'About', href: '/about/', match: [] },
+    { label: 'Résumé', href: '/resume/', match: [] },
   ],
 } as const;
 

@@ -3,7 +3,8 @@ import { site } from '../site.config';
 import { url } from '../lib/content';
 
 const path = Astro.url.pathname;
-const isActive = (href: string) => path.startsWith(url(href));
+const isActive = (item: { href: string; match: readonly string[] }) =>
+  [item.href, ...item.match].some((prefix) => path.startsWith(url(prefix)));
 ---
 
 <header class="no-print sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md">
@@ -21,7 +22,7 @@ const isActive = (href: string) => path.startsWith(url(href));
         site.nav.map((item) => (
           <a
             href={url(item.href)}
-            aria-current={isActive(item.href) ? 'page' : undefined}
+            aria-current={isActive(item) ? 'page' : undefined}
             class="rounded-full px-2.5 py-1.5 text-muted transition-colors hover:text-fg aria-[current=page]:text-fg sm:px-3"
           >
             {item.label}

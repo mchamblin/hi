@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import WorkRow from '../../components/WorkRow.astro';
+import { getWork, getWriting, formatDate, url } from '../../lib/content';
+
+const work = await getWork();
+const posts = await getWriting();
+---
+
+<Base title="Portfolio" description="Case studies of platform work, and writing about how I approach it.">
+  <PageHeader
+    label="Portfolio"
+    title="Work and <em>writing</em>."
+    lede="Case studies of the platforms I’ve built, and a few posts on how I approach the work."
+  />
+
+  <section class="container-page" aria-labelledby="case-studies-heading">
+    <h2 id="case-studies-heading" class="label pb-4">Case studies</h2>
+    <div class="border-b border-line">
+      {work.map((entry, index) => <WorkRow entry={entry} index={index} />)}
+    </div>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section id="writing" class="container-page mt-24 pb-24" aria-labelledby="writing-heading">
+        <h2 id="writing-heading" class="label pb-4">Writing</h2>
+        <ul class="border-b border-line">
+          {posts.map((post) => (
+            <li class="reveal border-t border-line">
+              <a href={url(`/writing/${post.id}/`)} class="group grid gap-2 py-7 sm:grid-cols-[9rem_1fr]">
+                <time class="label pt-1.5" datetime={post.data.date.toISOString()}>
+                  {formatDate(post.data.date)}
+                </time>
+                <div>
+                  <h3 class="font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-accent">
+                    {post.data.title}
+                  </h3>
+                  <p class="mt-2 max-w-xl text-muted">{post.data.description}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>

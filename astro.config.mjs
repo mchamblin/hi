@@ -16,6 +16,11 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   vite: { plugins: [tailwindcss()] },
   prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
+  // The old listing pages now live at /portfolio/. Detail pages keep their URLs.
+  redirects: {
+    '/work/': '/portfolio/',
+    '/writing/': '/portfolio/',
+  },
   // Fonts are downloaded at build time and self-hosted: no third-party requests.
   fonts: [
     {

@@ -39,7 +39,7 @@ const jsonLd = {
       <div class="rise" style="--i:2">
         <p class="max-w-xl text-xl leading-relaxed">{site.intro}</p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href={url('/work/')} class="btn btn-primary">See my work <span aria-hidden="true">→</span></a>
+          <a href={url('/portfolio/')} class="btn btn-primary">See my work <span aria-hidden="true">→</span></a>
           <a href={url('/resume/')} class="btn btn-ghost">Résumé</a>
           <a href={`mailto:${site.email}`} class="link ml-2 text-sm text-muted">{site.email}</a>
         </div>
@@ -80,7 +80,7 @@ const jsonLd = {
   <section class="container-page" aria-labelledby="work-heading">
     <div class="flex items-baseline justify-between pb-6">
       <h2 id="work-heading" class="label">Selected work</h2>
-      <a href={url('/work/')} class="label link">All projects</a>
+      <a href={url('/portfolio/')} class="label link">All projects</a>
     </div>
     <div class="border-b border-line">
       {work.map((entry, index) => <WorkRow entry={entry} index={index} />)}
@@ -137,7 +137,7 @@ const jsonLd = {
               </li>
             ))}
           </ul>
-          <a href={url('/writing/')} class="link mt-6 inline-block">
+          <a href={url('/portfolio/#writing')} class="link mt-6 inline-block">
             All writing →
           </a>
         </div>
